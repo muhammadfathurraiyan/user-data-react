@@ -109,13 +109,9 @@ export default function App() {
         body: JSON.stringify(newData),
       });
       const result = await response.json();
-      if (result?.detail) {
-        toast.error(result.detail + " " + "silahkan reset");
-      } else {
-        toast.success(result);
-      }
+      toast.success(result);
     } catch (error: any) {
-      toast.error("Something went wrong");
+      toast.error(error.toString());
     }
   };
 
